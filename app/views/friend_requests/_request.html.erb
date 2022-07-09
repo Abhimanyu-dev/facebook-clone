@@ -1,0 +1,12 @@
+<div class="friend-box">
+    <%= link_to user_path(request.receiver_id) do%>
+    <div class="profile-pic-container">
+        <i class="fa-solid fa-user fa-6x"></i>
+    </div>
+    <% end %>
+    
+    <div class="name-container">
+        <p><%= user.name %></p>
+        <%= button_to "Accept", accept_friend_request_path(request), method: :post %>
+    </div>
+</div>

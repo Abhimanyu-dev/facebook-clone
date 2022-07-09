@@ -1,0 +1,58 @@
+<div class="story">
+    <div class="story-container">
+        <div class="icon-container">
+            <i class="fa-solid fa-add fa-lg"></i>
+        </div>
+        <div class="text-container">
+            <h3>Create Story</h3>
+            <p>Share a photo or write something</p>
+        </div>
+    </div>
+</div>    
+
+<div class="create-post">
+    <div class="create-container">
+        <div class="p1">
+            <div class="img-container">
+                <i class="fa-solid fa-user fa-lg    "></i>
+            </div>
+            <% placeholder = ("What's on your mind, " + current_user.name).to_s %>
+                <div class="search-wrapper post-creator">
+                <input type="text" name="" id="" placeholder="<%= placeholder %>">
+                </div>
+            
+            
+        </div>
+        <div class="p2">
+            <div class="container">
+                <div class="icon-container video">
+                    <i class="fa-solid fa-video"></i>
+                </div>
+                <div class="text-container">
+                    Live Video
+                </div>  
+            </div>
+            <div class="container">
+                <div class="icon-container photo">
+                    <i class="fa-solid fa-photo-film"></i>
+                </div>
+                <div class="text-container">
+                    Photo/Video
+                </div>
+            </div>
+            <div class="container">
+                <div class="icon-container feeling">
+                    <i class="fa-solid fa-face-laugh-beam"></i>
+                </div>
+                <div class="text-container">
+                    Feeling/Activity
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% posts.each do |post| %>
+    <%= render "post", post: post %>    
+<% end %>
+    

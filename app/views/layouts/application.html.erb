@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fakebook</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags%>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+
+  <body>
+ 
+    <%= yield %>
+
+
+
+<% if user_signed_in? %>
+  
+
+<div class="profile-menu" style="display: none;">
+  <%= render "homepages/profile_menu", user: current_user%>
+</div>
+
+
+<div class="new-post" style="display: none; opacity: 0;">
+  <%= render "posts/new_post_form", post: Post.new(), user: current_user %>
+</div>
+<% end %>
+
+  </body>
+</html>

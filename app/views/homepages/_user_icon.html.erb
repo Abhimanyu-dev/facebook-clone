@@ -1,0 +1,30 @@
+<div class="friend-box">
+    <%= link_to user_path(user) do %>
+
+    <div class="profile-pic-container">
+        <i class="fa-solid fa-user fa-6x"></i>
+    </div>
+    
+    <% end %>
+    
+    <div class="name-container">
+        <p><%= user.name %></p>
+
+        <% if user.is_friend?(current_user) %>
+            <p></p>
+        <% elsif user.request_pending(current_user) %>
+            <div class="friend-btn sent">Request Sent</div>
+        <% else %>
+            <div class="form-container">
+                <%= form_with model: request  do |form|%>
+                    <%= form.hidden_field :receiver_id, value: user.id%>
+                    <%= form.submit "Add Friend", class: "friend-btn" %>
+                <% end %>    
+            </div>
+        <% end %>
+            
+    
+    </div>
+</div>
+
+

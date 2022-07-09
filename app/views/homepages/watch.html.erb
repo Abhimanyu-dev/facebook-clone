@@ -1,0 +1,77 @@
+ <% if user_signed_in? %>
+  <div class="navbar">
+      <div class="group group-1">
+        <div class="title-container">
+          
+          <%= link_to root_path do%>
+            <i class="fa-brands fa-facebook fa-lg"></i>
+          <% end %>
+        </div>
+        <%= form_tag(search_path, method: "get")  do%>
+        <div class="search-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-search" viewBox="0 0 24 24">
+          <defs></defs>
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="M21 21l-4.35-4.35"></path>
+        </svg>
+        <%# <input class="search-input" type="text" placeholder="Search Facebook "> %>
+        <%= search_field_tag :search, params[:search], placeholder: "Search Fakebook", class: "search-input" %>
+        <% end %>
+        
+      </div>
+      </div>
+      <div class="group group-2">
+        <a href="/">
+          <div class="icon-container page-control" id="index"> 
+          <i class="fa-solid fa-house fa-lg"></i>
+          </div>  
+          </a>
+        
+        <a href="/friends">
+        <div class="icon-container page-control" id="friends">
+          <i class="fa-solid fa-user-group fa-lg"></i>
+        </div>
+        </a>
+        <a href= "/watch">
+        <div class="icon-container page-control active" id="watch">
+          <i class="fa-solid fa-circle-play fa-lg"></i>
+        </div>
+        </a>
+        <a href="/shop">
+        <div class="icon-container page-control" id="shop">
+          <i class="fa-solid fa-shop fa-lg"></i>
+        </div>
+        </a>
+        <a href="/game">
+        <div class="icon-container page-control" id="game" >
+          <i class="fa-solid fa-gamepad fa-lg"></i>
+        </div>
+        </a>
+      </div>
+      <div class="group group-3">
+        <div class="controls">
+          <div class="menu icon-container">
+            <i class="fa-solid fa-bars fa-lg"></i>
+          </div>
+          
+          <div class="messenger icon-container">
+            <i class="fa-solid fa-message fa-lg"></i>
+          </div>
+          
+          
+          <div class="notification icon-container">
+            <i class="fa-solid fa-bell fa-lg"></i>
+          </div>
+          <div class="profile icon-container">
+            <i class="fa-solid fa-user fa-lg"></i>
+          </div>
+        </div>
+      </div>
+  </div>
+  
+  <% end %>
+  
+
+<div class="watch-page">
+    Coming Soon
+</div>

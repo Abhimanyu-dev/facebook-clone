@@ -1,0 +1,90 @@
+<div class="profile-container">
+    <div class="profiles">
+            <%= link_to user_path(user) do%>
+
+        <div class="container">
+            <div class="icon-container">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="text-container">
+                <%= user.name %>
+            </div>
+            
+            
+        </div>
+            <% end %>
+
+        <hr>
+        <div class="txt">See all profiles</div>
+    </div>
+
+    <div class="menu">
+        <div class="container">
+            <div class="head">
+                <div class="icon-container">
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+                <div class="text-container">
+                    Settings
+                </div>
+            </div>
+
+            <div class="icon-container">
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+        <div class="container">
+            <div class="head">
+                <div class="icon-container">
+                    <i class="fa-solid fa-circle-question"></i>
+                </div>
+                <div class="text-container">
+                    Help & support
+                </div>
+            </div>
+
+            <div class="icon-container">
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+        <div class="container">
+            <div class="head">
+                <div class="icon-container">
+                   <i class="fa-solid fa-moon"></i>
+                </div>
+                <div class="text-container">
+                    Display & appearance
+                </div>
+            </div>
+
+            <div class="icon-container">
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+        <div class="container">
+            <div class="head">
+                <div class="icon-container">
+                    <i class="fa-solid fa-message"></i>
+                </div>
+                <div class="text-container">
+                    Give Feedback
+                </div>
+            </div>
+
+        </div>
+        <div class="container">
+            <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do%>
+            <div class="head">
+                <div class="icon-container">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </div>
+                <div class="text-container">
+                    Logout
+                </div>
+            </div>
+            <% end %>
+            
+        </div>
+    </div>
+
+</div>

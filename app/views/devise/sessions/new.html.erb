@@ -1,0 +1,46 @@
+<div class="sign-up-page">
+  <div class="content">
+    <div class="text-container">
+      <div class="title">facebook</div>
+      <div class="extra-text">Facebook helps you connect and share with the people in your life.</div>
+    </div>
+    <div class="form-container">
+        
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+        
+        <div class="field">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email address" %>
+        </div>
+
+        <div class="field">
+          <%= f.password_field :password, autocomplete: "current-password" , placeholder: "Password"%>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Log in" %>
+        </div>
+
+        <div class="forgot-password">
+            <a href="#"  >Forgotten Password</a>
+        </div>
+
+        <div class="new-account">
+          <%= link_to "Create New Account", new_user_registration_path %>
+        </div>
+      <% end %>     
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<%# <%= render "devise/shared/links" %>

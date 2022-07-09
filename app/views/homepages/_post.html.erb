@@ -1,0 +1,58 @@
+<div class="post-container">
+    <div class="post-author">
+        <div class="icon-container">
+            <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="name-container">
+            <%= post.user.name %>
+        </div>
+    </div>
+    <div class="post-body">
+        <p><%= post.body %></p>
+    </div>
+    <div class="like-counter">
+        <%= post.likes.count %> <%= post.likes.count == 1 ? "Like" : "Likes" %>
+    </div>
+    <% pre_like = post.likes.find{|like| like.user_id == current_user.id} %>
+    <div class="post-controls">
+         <% if pre_like %>
+         
+            <div class="container like-btn liked">
+                <div class="icon-container ">
+                    <i class="fa-solid fa-thumbs-up"></i>
+                </div>
+                <div class="text-container">
+                    Like
+                </div>
+            </div>
+            
+        <% else %>
+            <div class="container like-btn ">
+                <div class="icon-container ">
+                    <i class="fa-solid fa-thumbs-up"></i>
+                </div>
+                <div class="text-container">
+                    Like
+                </div>
+            </div>
+        <% end %>
+        
+        <div class="container">
+            <div class="icon-container">
+                <i class="fa-solid fa-comment"></i>
+            </div>
+            <div class="text-container">
+                Comment
+            </div>
+        </div>
+        <div class="container">
+            <div class="icon-container">
+                <i class="fa-solid fa-share"></i>
+            </div>
+            <div class="text-container">
+                Share
+            </div>
+        </div>
+    </div>
+
+</div>
