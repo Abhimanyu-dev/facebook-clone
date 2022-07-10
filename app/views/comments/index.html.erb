@@ -82,14 +82,15 @@
 <div class="homepage">
   
     <div class="posts">
-      <%= render "feed", user: current_user, posts: @posts %>
+      <%= render "feed", user: current_user, post: @post %>
     </div>
+
     <div class="toolbar">
-      <%= render "toolbar" %>
+      <%= render "homepages/toolbar" %>
     </div>
     <div class="sponsored">
-      <%= render "sponsored" %>
-      <%= render "groups" %>
+      <%= render "homepages/sponsored" %>
+      <%= render "homepages/groups" %>
     </div>
     <div class="message">
       <div class="icon-container">

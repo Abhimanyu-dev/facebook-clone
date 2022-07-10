@@ -15,6 +15,8 @@ class User < ApplicationRecord
 
   has_many :likes
 
+  has_many :comments, dependent: :delete_all
+
   def friend_id
     friend_ids = []
     self.friendships.each do |friendship|

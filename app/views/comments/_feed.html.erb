@@ -1,0 +1,9 @@
+<%= render "homepages/post", post: post %>
+
+<div class="new-comment">
+<%= render "form", user: user, comment: Comment.new(), post: post %>
+</div>
+
+<% @comments.each do |comment| %>
+    <%= render "comment", comment:  comment%>
+<% end %>

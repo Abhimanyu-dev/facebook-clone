@@ -61,6 +61,11 @@
           
           <div class="notification icon-container">
             <i class="fa-solid fa-bell fa-lg"></i>
+            <% if current_user.pending_requests.count != 0 %>
+            <div class="notification-counter">
+              <%= current_user.pending_requests.count %>
+            </div>
+            <% end %>
           </div>
           <div class="profile icon-container">
             <i class="fa-solid fa-user fa-lg"></i>

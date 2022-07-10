@@ -4,7 +4,7 @@
 
         <div class="container">
             <div class="icon-container">
-                <i class="fa-solid fa-user"></i>
+                <%= gravatar_image_tag(user.email, size:20, alt: user.username ) %>
             </div>
             <div class="text-container">
                 <%= user.name %>

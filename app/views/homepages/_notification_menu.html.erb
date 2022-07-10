@@ -1,0 +1,16 @@
+<div class="notification-container">
+    <div class="title">
+        <h1>Notifications</h1>
+    </div>
+        <% user.pending_requests.each do |request| %>       
+        <%= link_to friend_requests_path do %>
+            <div class="request-container">
+
+                    <div class="icon-container"><%= gravatar_image_tag(User.find(request.sender_id).email, size:20, alt: User.find(request.sender_id).username ) %></div> 
+                    <div class="notification"><%= User.find(request.sender_id).name %> sent you a request</div>        
+            </div>
+            <% end %>
+        <% end %>
+        
+
+</div>

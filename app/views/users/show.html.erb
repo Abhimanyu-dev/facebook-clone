@@ -61,6 +61,11 @@
           
           <div class="notification icon-container">
             <i class="fa-solid fa-bell fa-lg"></i>
+            <% if current_user.pending_requests.count != 0 %>
+            <div class="notification-counter">
+              <%= current_user.pending_requests.count %>
+            </div>
+            <% end %>
           </div>
           <div class="profile icon-container">
             <i class="fa-solid fa-user fa-lg"></i>
@@ -77,7 +82,7 @@
         <div class="background-container">
             <%= image_tag("bg-img.jpg") %>
             <div class="profile-pic-container">
-                <i class="fa-solid fa-user fa-4x"></i>
+                <%= gravatar_image_tag(@user.email, size:20, alt: @user.username ) %>
             </div>
         </div>
         <div class="profile-container">

@@ -1,0 +1,14 @@
+<div class="comment-container">
+    <div class="comment-author">
+        <div class="icon-container">
+            <%= gravatar_image_tag(comment.user.email, size:20, alt: comment.user.username ) %>
+        </div>
+        <div class="name-container">
+            <%= comment.user.name %>
+        </div>
+    </div>
+    <div class="comment-body">
+        <p><%= comment.body %></p>
+    </div>
+
+</div>

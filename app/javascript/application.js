@@ -116,6 +116,31 @@ function profileMenu(){
 }
 }
 }
+function notificationMenu(){
+    const notificationBtn = document.querySelector(".notification")
+    const posts = document.querySelector(".posts")
+    // const navbar = document.querySelector(".navbar")
+    const menu = document.querySelector(".notification-menu")
+    console.log (menu)
+
+    if (notificationBtn!= null){
+    notificationBtn.addEventListener("click", function(){
+        console.log("hi")
+        if (menu.style.display === "none"){
+            menu.style.display = "block";
+        }else{
+            menu.style.display = "none"
+        }
+    })
+
+    if (posts != null){
+    posts.addEventListener("click", function(){
+        if (menu.style.display === "block")
+        menu.style.display = "none"
+    })
+}
+}
+}
 
 // function like(){
 //     const btn = document.querySelectorAll(".like-btn")
@@ -197,3 +222,4 @@ function refresh(){
     home()
     login()
     refresh()
+    notificationMenu()

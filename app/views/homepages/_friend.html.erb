@@ -1,6 +1,7 @@
 <div class="friend-box">
     <div class="profile-pic-container">
-        <i class="fa-solid fa-user fa-6x"></i>
+        <%= gravatar_image_tag(user.email, size:20, alt: user.username ) %>
+
     </div>
     <div class="name-container">
         <p><%= user.name %></p>

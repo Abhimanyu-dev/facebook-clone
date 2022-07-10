@@ -15,22 +15,22 @@ class LikesController < ApplicationController
             @post.likes.create(user_id: current_user.id)
         end
 
-        redirect_to root_path
+        redirect_to request.referrer
     end
 
     def destroy
         @like.destroy
-        redirect_to root_path
+        redirect_to request.referrer
     end
 
     private
 
     def find_post
-        @post = Post.find(params[:id])
+        @post = Post.find(params[:post_id])
     end
 
     def find_like
-        @like = @post.likes.find(params[:id])
+        @like = @post.likes.find{|like| like.user_id == current_user.id}
     end
 
     def already_liked?

@@ -48,6 +48,7 @@ gem "tzinfo-data"
 gem "bootsnap", require: false
 
 gem "devise"
+gem "gravatar_image_tag"
 # Use Sass to process CSS
 gem "sassc-rails"
 

@@ -1,0 +1,31 @@
+<div class="new-comment-container">
+
+
+    <div class="head">
+        <div class="empty-space"></div>
+        <div class="title-container">
+            <p>Create Comment
+            </p>
+        </div>
+    </div>
+    <div class="user-container">
+        <div class="icon-container">
+            <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="text-container">
+            <p><%= current_user.name %></p>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <%= form_with model: [post, post.comments.build] do |form| %>
+            <%= form.text_area :body, autofocus: true, class: "body-container", placeholder: ("What do you think about it, ".concat(current_user.name.to_s)), rows: 2%>
+            <div class="buttons">
+                <%= form.submit "Create" , class: "submit"%>
+            </div>
+        <% end %>
+        
+    </div>
+
+</div>
+

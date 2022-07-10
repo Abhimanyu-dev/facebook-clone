@@ -1,8 +1,11 @@
 <div class="toolbar-container">
+    <%= link_to user_path(current_user) do%>
     <div class="item">
-        <div class="icon-container user"><i class="fa-solid fa-user fa-lg" ></i></div>
-        <div class="text-container"><p><%= @user.name %></p></div>
+        <div class="icon-container user"><%= gravatar_image_tag(current_user.email, size:20, alt: current_user.username ) %></div>
+        <div class="text-container"><p><%= current_user.name %></p></div>
     </div>
+    <% end %>
+    
         <%= link_to  friends_path do%>
     <div class="item">
         <div class="icon-container friends"><i class="fa-solid fa-user-group fa-lg" ></i></div>

@@ -25,6 +25,10 @@
   <%= render "homepages/profile_menu", user: current_user%>
 </div>
 
+<div class="notification-menu" style="display: none;">
+  <%= render "homepages/notification_menu", user: current_user%>
+</div>
+
 
 <div class="new-post" style="display: none; opacity: 0;">
   <%= render "posts/new_post_form", post: Post.new(), user: current_user %>
