@@ -12,7 +12,7 @@ puts "seeding data"
 
 
 
-10.times do
+100.times do
     name = Faker::Name.name
     username = name.split()[0].downcase
     email = username + "@gmail.com"
